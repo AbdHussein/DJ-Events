@@ -6,11 +6,11 @@ export default function EventItem({evt}) {
     return (
         <div className={styles.event}>
             <div className={styles.img}>
-                <Image src={evt.image ? evt.image : '/images/event-default.png'} width={170} height={100}/>
+                <Image src={evt.image ? evt.image.formats.thumbnail.url : '/images/event-default.png'} width={170} height={100}/>
             </div>
             <div className={styles.info}>
                 <span>
-                    {evt.date} at {evt.time}
+                {new Date(evt.date).toLocaleDateString('en-US')} at {evt.time}
                 </span>
                 <h3>{evt.name}</h3>
             </div>
